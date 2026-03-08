@@ -14,7 +14,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",      // local dev
+      "https://irmiya.netlify.app"  // deployed frontend 
+    ],
     credentials: true
 }));
 app.use(express.json());
