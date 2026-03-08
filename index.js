@@ -33,10 +33,9 @@ app.use((req, res, next) => {
     message: "API endpoint not found"
   });
 });
-app.use('/',()=>{
-  return ({message:"Server running"});
-})
-
+app.get('/', (req, res) => {
+  res.json({ message: "Server running" });
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
